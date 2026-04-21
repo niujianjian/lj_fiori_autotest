@@ -1,0 +1,12 @@
+test: supports search, navigation, and note saving
+url: http://localhost:8082/index.html#/detail/P001
+title: SAPUI5 Testing Demo
+readyState: complete
+
+error:
+AssertionError [ERR_ASSERTION]: navigation should open the matching post
+actual expected
+
+'Vintage Chair1'
+
+    at Context.<anonymous> (C:\lj_vsproj\lj_fiori_autotest\sapui5-testing-demo-autotest\test\e2e\app.e2e.spec.js:40:12)

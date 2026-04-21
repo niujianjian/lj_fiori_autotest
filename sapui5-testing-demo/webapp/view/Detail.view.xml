@@ -1,0 +1,60 @@
+<mvc:View
+  controllerName="demo.testingtutorial.controller.Detail"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:form="sap.ui.layout.form"
+  displayBlock="true"
+>
+  <Page id="detailPage" title="Post Detail" showNavButton="true" navButtonPress="onNavBack">
+    <content>
+      <VBox class="sapUiResponsiveContentPadding sapUiSmallMarginTopBottom">
+        <ObjectHeader
+          id="detailHeader"
+          title="{Title}"
+          intro="{Category}"
+          number="{path: 'Price', formatter: '.formatter.priceText'}"
+          numberUnit=""
+        >
+          <statuses>
+            <ObjectStatus
+              text="{path: 'Status', formatter: '.formatter.statusText'}"
+              state="{path: 'Status', formatter: '.formatter.statusState'}"
+            />
+          </statuses>
+          <attributes>
+            <ObjectAttribute title="Created" text="{path: 'CreatedAt', formatter: '.formatter.shortDate'}" />
+            <ObjectAttribute title="Description" text="{Description}" />
+          </attributes>
+        </ObjectHeader>
+        <form:Form editable="true">
+          <form:layout>
+            <form:ColumnLayout columnsM="2" columnsL="3" columnsXL="4" />
+          </form:layout>
+          <form:formContainers>
+            <form:FormContainer title="Quick Note">
+              <form:formElements>
+                <form:FormElement label="Note">
+                  <form:fields>
+                    <Input id="noteInput" value="{view>/draftNote}" placeholder="Add a follow-up note" />
+                  </form:fields>
+                </form:FormElement>
+                <form:FormElement label="Action">
+                  <form:fields>
+                    <Button id="saveNoteButton" text="Save Note" type="Emphasized" press="onSaveNote" />
+                  </form:fields>
+                </form:FormElement>
+              </form:formElements>
+            </form:FormContainer>
+          </form:formContainers>
+        </form:Form>
+        <MessageStrip
+          id="savedNoteStrip"
+          text="{view>/savedNote}"
+          type="Success"
+          visible="{= !!${view>/savedNote} }"
+        />
+         <!--"{= !!${view>/savedNote} }"-->
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

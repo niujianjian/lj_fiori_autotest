@@ -1,0 +1,69 @@
+<mvc:View
+  controllerName="demo.testingtutorial.controller.Worklist"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  displayBlock="true"
+>
+  <Page id="worklistPage" title="Testing Tutorial Demo">
+    <content>
+      <VBox class="sapUiResponsiveContentPadding sapUiSmallMarginTopBottom" renderType="Bare">
+        <Title id="summaryTitle" text="{view>/resultSummary}" level="H2" />
+        <SearchField
+          id="searchField"
+          width="100%"
+          placeholder="Search posts"
+          search="onSearch"
+          liveChange="onLiveSearch"
+        />
+        <IconTabBar
+          id="categoryTabs"
+          class="sapUiSmallMarginTopBottom"
+          selectedKey="{view>/selectedCategory}"
+          select="onSelectCategory"
+        >
+          <items>
+            <IconTabFilter id="allTab" key="all" text="All" />
+            <IconTabFilter id="offerTab" key="offer" text="Offers" />
+            <IconTabFilter id="requestTab" key="request" text="Requests" />
+          </items>
+        </IconTabBar>
+        <Table
+          id="postsTable"
+          growing="true"
+          growingThreshold="3"
+          updateFinished="onUpdateFinished"
+          items="{/Posts}"
+        >
+          <columns>
+            <Column><Text text="Title" /></Column>
+            <Column><Text text="Category" /></Column>
+            <Column hAlign="End"><Text text="Price" /></Column>
+            <Column><Text text="Status" /></Column>
+            <Column><Text text="Date" /></Column>
+            <Column hAlign="Center"><Text text="Flag" /></Column>
+          </columns>
+          <items>
+            <ColumnListItem type="Navigation" press="onSelectPost">
+              <cells>
+                <ObjectIdentifier title="{Title}" text="{Description}" />
+                <Text text="{Category}" />
+                <Text text="{path: 'Price', formatter: '.formatter.priceText'}" />
+                <ObjectStatus
+                  text="{path: 'Status', formatter: '.formatter.statusText'}"
+                  state="{path: 'Status', formatter: '.formatter.statusState'}"
+                />
+                <Text text="{path: 'CreatedAt', formatter: '.formatter.shortDate'}" />
+                <Button
+                  id="flagButton"
+                  type="Transparent"
+                  text="{path: 'Flagged', formatter: '.formatter.flagButtonText'}"
+                  press="onToggleFlag"
+                />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

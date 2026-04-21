@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx
+  Version="1.0"
+  xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+>
+  <edmx:DataServices
+    m:DataServiceVersion="2.0"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+  >
+    <Schema
+      Namespace="ZUI5_TESTING_TUTORIAL_SRV"
+      xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+    >
+      <EntityType Name="PostType">
+        <Key>
+          <PropertyRef Name="PostID" />
+        </Key>
+        <Property Name="PostID" Type="Edm.String" Nullable="false" MaxLength="10" />
+        <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="120" />
+        <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="255" />
+        <Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="20" />
+        <Property Name="Price" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="2" />
+        <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="20" />
+        <Property Name="CreatedAt" Type="Edm.String" Nullable="false" MaxLength="10" />
+        <Property Name="Flagged" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityContainer Name="ZUI5_TESTING_TUTORIAL_SRV_Entities" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="Posts" EntityType="ZUI5_TESTING_TUTORIAL_SRV.PostType" />
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

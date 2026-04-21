@@ -1,0 +1,82 @@
+{
+  "_version": "1.58.0",
+  "sap.app": {
+    "id": "demo.testingtutorial",
+    "type": "application",
+    "title": "SAPUI5 Testing Demo",
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZUI5_TESTING_TUTORIAL_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {},
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "demo.testingtutorial.view.App",
+      "type": "XML",
+      "id": "appRoot"
+    },
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "models": {
+      "": {
+        "dataSource": "mainService",
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "useBatch": false
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "demo.testingtutorial.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        {
+          "name": "worklist",
+          "pattern": "",
+          "target": "worklist"
+        },
+        {
+          "name": "detail",
+          "pattern": "detail/{postId}",
+          "target": "detail"
+        }
+      ],
+      "targets": {
+        "worklist": {
+          "viewName": "Worklist"
+        },
+        "detail": {
+          "viewName": "Detail"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "PostID": "P001",
+    "Title": "Vintage Chair",
+    "Description": "Solid oak chair in good condition.",
+    "Category": "Offer",
+    "Price": 24.9,
+    "Status": "Open",
+    "CreatedAt": "2026-03-24",
+    "Flagged": false
+  },
+  {
+    "PostID": "P002",
+    "Title": "Standing Desk",
+    "Description": "Height-adjustable desk, pickup only.",
+    "Category": "Offer",
+    "Price": 120,
+    "Status": "Review",
+    "CreatedAt": "2026-03-23",
+    "Flagged": false
+  },
+  {
+    "PostID": "P003",
+    "Title": "Looking for City Bike",
+    "Description": "Searching for a commuter bike in medium size.",
+    "Category": "Request",
+    "Price": 80,
+    "Status": "Open",
+    "CreatedAt": "2026-03-22",
+    "Flagged": true
+  },
+  {
+    "PostID": "P004",
+    "Title": "Acoustic Guitar",
+    "Description": "Six-string guitar with carrying bag.",
+    "Category": "Offer",
+    "Price": 65,
+    "Status": "Sold",
+    "CreatedAt": "2026-03-21",
+    "Flagged": false
+  },
+  {
+    "PostID": "P005",
+    "Title": "Need Programming Books",
+    "Description": "Looking for recent UI5 and testing books.",
+    "Category": "Request",
+    "Price": 30,
+    "Status": "Review",
+    "CreatedAt": "2026-03-20",
+    "Flagged": false
+  }
+]

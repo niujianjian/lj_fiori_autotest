@@ -1,0 +1,23 @@
+{
+  "name": "sapui5-testing-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SAPUI5 testing demo with QUnit, OPA5, mock server, and wdi5",
+  "scripts": {
+    "start": "ui5 serve --port 8082 --open test.html",
+    "start:ci": "ui5 serve --port 8082 --accept-remote-connections",
+    "test:unit": "ui5 serve --port 8081 --open test/unit/unitTests.qunit.html",
+    "test:opa": "ui5 serve --port 8081 --open test/integration/opaTests.qunit.html",
+    "deploy:a4h": "ui5 build preload --clean-dest --config ui5-deploy.yaml"
+  },
+  "devDependencies": {
+    "@sap-ux/ui5-middleware-fe-mockserver": "^2.4.10",
+    "@ui5/cli": "^3.11.1",
+    "ui5-task-nwabap-deployer": "^2.1.1"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-task-nwabap-deployer"
+    ]
+  }
+}

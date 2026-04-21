@@ -1,0 +1,13 @@
+{
+  "name": "sapui5-test-tool",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local UI tool for running SAPUI5 test projects from a browser",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "sapui5-testing-demo-autotest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone automation project for the SAPUI5 testing demo",
+  "scripts": {
+    "start:app": "npm --prefix ../sapui5-testing-demo run start",   
+    "test:unit:wdio": "wdio run wdio.qunit.conf.js --suite unit --logLevel error",
+    "test:opa:wdio": "wdio run wdio.qunit.conf.js --suite opa --logLevel error",
+    "test:e2e": "wdio run wdio.conf.js --logLevel error",   
+    "test:all": "npm run test:unit:wdio && npm run test:opa:wdio && npm run test:e2e",
+
+    "start:app:ci": "npm --prefix ../sapui5-testing-demo run start:ci", 
+    "test:unit:ci": "start-server-and-test start:app:ci http://localhost:8082/test/unit/unitTests.qunit.html test:unit:wdio",
+    "test:opa:ci": "start-server-and-test start:app:ci http://localhost:8082/test/integration/opaTests.qunit.html test:opa:wdio",
+    "test:e2e:ci": "start-server-and-test start:app:ci http://localhost:8082/index.html test:e2e",
+    "test:all:ci": "start-server-and-test start:app:ci http://localhost:8082/index.html test:all",
+
+    "test:unit:report-failure:wdio": "wdio run wdio.qunit.conf.js --spec ./test/qunit/reportFailure.qunit.spec.js --logLevel error",
+    "test:e2e:report-failure": "wdio run wdio.conf.js --spec ./test/e2e/reportFailure.e2e.spec.js --logLevel error",
+
+    "test:unit:report-failure:ci": "start-server-and-test start:app:ci http://localhost:8082/test/unit/reportFailure.qunit.html test:unit:report-failure:wdio",
+    "test:e2e:report-failure:ci": "start-server-and-test start:app:ci http://localhost:8082/index.html test:e2e:report-failure"
+    
+  },
+  "devDependencies": {
+    "@wdio/cli": "^8.43.0",
+    "@wdio/local-runner": "^8.43.0",
+    "@wdio/mocha-framework": "^8.43.0",
+    "@wdio/spec-reporter": "^8.43.0",
+    "chromedriver": "^146.0.6",
+    "start-server-and-test": "^2.0.10",
+    "wdio-chromedriver-service": "^8.1.1",
+    "wdio-ui5-service": "^2.2.1",
+    "webdriverio": "^8.43.0"
+  }
+}

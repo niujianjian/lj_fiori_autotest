@@ -1,0 +1,27 @@
+<mvc:View
+  controllerName="demo.autotest.controller.Main"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  displayBlock="true"
+>
+  <App>
+    <pages>
+      <Page id="mainPage" title="Auto Test Template">
+        <content>
+          <VBox class="sapUiSmallMargin">
+            <Title id="pageTitle" text="Home" level="H2" />
+            <Button id="searchButton" text="Search" press="onPressSearch" />
+            <List id="resultList" visible="false" items="{/Results}">
+              <items>
+                <StandardListItem
+                  title="{Name}"
+                  description=""
+                />
+              </items>
+            </List>
+          </VBox>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>
