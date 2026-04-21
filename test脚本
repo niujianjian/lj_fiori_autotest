@@ -5,16 +5,20 @@ set-Location ./;npm run wdio.conf.js --logLevel error
 Git 可以通过全局配置来设置 HTTP/HTTPS 代理：
 
 # 设置 HTTP 代理
-git config --global http.proxy http://127.0.0.1:你的代理端口号
-
+git config --global http.proxy http://127.0.0.1:9674
 # 设置 HTTPS 代理
-git config --global https://127.0.0.1:你的代理端口号
-
+git config --global https.proxy https://127.0.0.1:9674
 # 取消 HTTP 代理设置
 git config --global --unset http.proxy
-
 # 取消 HTTPS 代理设置
 git config --global --unset https.proxy
+
+- 初始化 Git 仓库： git init
+- 添加所有文件： git add -A
+- 提交初始版本： git commit -m "Initial commit"
+- 添加远程仓库： git remote add origin https://github.com/niujianjian/lj_fiori_autotest.git
+- 推送到远程： git push -u origin master
+
 
 npm install chromedriver --chromedriver_filepath=../chromedriver/chrome-win64.zip
 mklink /D C:\lj_vsproj\lj_fiori_autotest\sapui5-testing-demo-autotest\node_modules C:\lj_vsproj\lj_fiori_autotest\node_modules
